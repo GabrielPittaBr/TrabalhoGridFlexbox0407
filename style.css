@@ -6,6 +6,16 @@
 
 @media (max-width: 700px) {
 
+    .container-tudo {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "banner"
+            "main"
+            "aside"
+            "footer";
+    }
+
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -27,6 +37,11 @@
         padding: 8px 16px;
     }
 
+    aside, main {
+        margin: 0;
+        padding: 10px;
+    }
+
     main {
         padding: 15px 20px;
     }
@@ -46,6 +61,12 @@
 }
 
 @media (max-width: 500px) {
+
+    header {
+        position: static !important;
+        padding: 8px 2vw;
+    }
+
     nav ul {
         flex-direction: column;
         align-items: flex-start;
@@ -92,6 +113,11 @@ header {
     display: flex;
     align-items: center;
     flex-direction: row;
+}
+
+.logo-titulo:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
 }
 
 .logo {
@@ -148,12 +174,12 @@ nav a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
     pointer-events: none;
 }
 
-.banner > * {
+.banner>* {
     position: relative;
     z-index: 2;
 }
@@ -222,20 +248,20 @@ main section p {
 }
 
 .aside-natureza h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #2e7d32;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2e7d32;
 }
 
 .aside-natureza ul {
-  list-style: disc inside;
-  padding: 0;
-  margin: 0;
+    list-style: disc inside;
+    padding: 0;
+    margin: 0;
 }
 
 .aside-natureza li {
-  margin-bottom: 10px;
-  line-height: 1.4;
+    margin-bottom: 10px;
+    line-height: 1.4;
 }
 
 .formulario {
@@ -388,6 +414,7 @@ select:focus {
     .banner {
         font-size: 5vw;
     }
+
     .banner button {
         font-size: 1.8vmax;
     }
