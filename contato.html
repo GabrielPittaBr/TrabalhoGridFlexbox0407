@@ -9,10 +9,28 @@
 </head>
 
 <body>
+  <header>
+    <div class="logo-titulo">
+      <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" alt="Logo Natureza">
+      </div>
+      <h1>Natureza</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobrenos.html">Sobre</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="banner">
+    <h2>Entre em contato</h2>
+  </div>
   <form class="formulario" action="#" method="POST">
-    <h2>Entre em Contato</h2>
 
-    <label for="nome">Nome completo*</label>
+    <label for="nome">Nome completo</label>
     <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
 
     <label for="cpf">CPF</label>
@@ -22,7 +40,7 @@
     <label for="dataNascimento">Data de nascimento</label>
     <input type="date" id="dataNascimento" name="dataNascimento" max="2025-12-31">
 
-    <label for="email">E-mail*</label>
+    <label for="email">E-mail</label>
     <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
 
     <label for="telefone">Telefone</label>
@@ -38,12 +56,12 @@
       <option value="reclamacao">Reclamação</option>
     </select>
 
-    <label for="mensagem">Mensagem*</label>
+    <label for="mensagem">Mensagem</label>
     <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
     <div class="checkbox">
       <input type="checkbox" id="termos" required>
-      <label for="termos">Li e aceito os termos de uso*</label>
+      <label for="termos">Li e aceito os termos de uso</label>
     </div>
 
     <button class="button2" type="submit">Enviar</button>
@@ -71,7 +89,6 @@
         </ul>
       </div>
     </footer>
-
 </body>
 
 </html>

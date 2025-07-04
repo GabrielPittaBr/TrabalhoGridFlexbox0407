@@ -42,6 +42,7 @@
     main section p {
         font-size: 0.95rem;
     }
+
 }
 
 @media (max-width: 500px) {
@@ -132,16 +133,33 @@ nav a:hover {
     background-size: cover;
     background-position: center;
     text-align: center;
-    font-size: 3vmax;
+    font-size: 4vw;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    height: 40vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.banner > * {
+    position: relative;
+    z-index: 2;
 }
 
 .banner button {
+    font-family: Montserrat, sans-serif;
     background-color: var(--cor-primaria);
     color: white;
     border: none;
@@ -154,7 +172,7 @@ nav a:hover {
 }
 
 .banner button:hover {
-    background-color: #45a049;
+    background-color: #388e3c;
 }
 
 aside {
@@ -201,53 +219,21 @@ main section p {
     color: var(--cor-texto);
 }
 
-
-.footer {
-    grid-area: footer;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #111;
-    color: white;
-    padding: 40px 60px;
-    flex-wrap: wrap;
-    gap: 40px;
-    width: 100%;
-    box-sizing: border-box;
-    width: 100%;
+.aside-natureza h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2e7d32;
 }
 
-.footer-coluna {
-    flex: 1;
-    min-width: 200px;
+.aside-natureza ul {
+  list-style: disc inside;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-coluna h3 {
-    color: #66bb6a;
-    border-bottom: 2px solid #66bb6a;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-.footer-coluna p,
-.footer-coluna ul {
-    color: white;
-    margin: 0;
-}
-
-.footer-coluna a {
-    color: #4caf50;
-    text-decoration: none;
-}
-
-.footer-coluna a:hover {
-    text-decoration: underline;
-}
-
-.footer-coluna ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 8px;
+.aside-natureza li {
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
 .formulario {
@@ -284,6 +270,10 @@ textarea {
     font-size: 1rem;
 }
 
+textarea {
+    resize: none;
+}
+
 input:focus,
 textarea:focus,
 select:focus {
@@ -299,10 +289,11 @@ select:focus {
 }
 
 .button2 {
+    font-family: Montserrat, sans-serif;
     width: 100%;
     margin-top: 25px;
     padding: 12px;
-    background-color: #4caf50;
+    background-color: var(--cor-primaria);
     color: white;
     font-size: 1.1rem;
     border: none;
@@ -341,4 +332,61 @@ select:focus {
     list-style: disc;
     margin-left: 20px;
     margin-bottom: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #111;
+    color: white;
+    padding: 40px 60px;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer-coluna {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-coluna h3 {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid #66bb6a;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.footer-coluna p,
+.footer-coluna ul {
+    color: white;
+    margin: 0;
+}
+
+.footer-coluna a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.footer-coluna a:hover {
+    text-decoration: underline;
+}
+
+.footer-coluna ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+    .banner {
+        font-size: 5vw;
+    }
+    .banner button {
+        font-size: 1.8vmax;
+    }
 }
