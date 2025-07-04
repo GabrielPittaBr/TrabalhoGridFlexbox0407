@@ -1,44 +1,70 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Define o layout principal com Flexbox */
-.conteudo {
-  display: flex;               /* ativa o Flexbox */
-  justify-content: space-between; /* espaço entre os elementos */
-  align-items: flex-start;     /* alinha topo dos elementos */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f5f7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-tudo {
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "banner banner banner"
+    "aside main nav"
+    "footer footer footer";
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: #2e7d32;
   padding: 20px;
-  gap: 30px;                   /* espaçamento entre os filhos (main e aside) */
+  text-align: center;
+  color: white;
+}
+
+main {
+  flex: 1;
+}
+
+.conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 30px;
   max-width: 1200px;
   margin: auto;
-  font-family: Arial, sans-serif;
 }
 
-/* Estiliza o aside */
 .aside-natureza {
-  flex: 1;                    /* ocupa uma parte do espaço */
-  max-width: 350px;           /* limita a largura do aside */
-  background-color: #e0f5e6;  /* verde claro de fundo */
-  border-left: 6px solid #4CAF50; /* borda decorativa */
+  flex: 1;
+  max-width: 350px;
+  background-color: #e0f5e6;
+  border-left: 6px solid #4CAF50;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Título do aside */
 .aside-natureza h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: #2e7d32;
 }
 
-/* Lista de curiosidades */
 .aside-natureza ul {
-  list-style: disc inside;  /* bolinhas dentro do container */
-  padding: 0;
-  margin: 0;
+  list-style: disc inside;
 }
 
 .aside-natureza li {
@@ -46,4 +72,155 @@ box-sizing: border-box;
   line-height: 1.4;
 }
 
+.formulario {
+  max-width: 600px;
+  width: 90%;
+  margin: 40px auto;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
 
+.formulario h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2e7d32;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.checkbox {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+.sobre-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: #333;
+}
+
+.sobre-conteudo h2 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.sobre-conteudo h3 {
+  margin-top: 30px;
+  color: #388e3c;
+}
+
+.sobre-conteudo p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.sobre-conteudo ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #111;
+  color: white;
+  padding: 40px 60px;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  grid-area: footer;
+}
+
+.footer-coluna {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-coluna h3 {
+  color: #66bb6a;
+  border-bottom: 2px solid #66bb6a;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.footer-coluna p, .footer-coluna ul {
+  color: white;
+  margin: 0;
+}
+
+.footer-coluna a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.footer-coluna a:hover {
+  text-decoration: underline;
+}
+
+.footer-coluna ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .conteudo {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .footer-coluna {
+    min-width: unset;
+    margin-bottom: 20px;
+  }
+}
