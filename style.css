@@ -4,15 +4,207 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-titulo {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    main {
+        padding: 15px 20px;
+    }
+
+    main h2 {
+        font-size: 1.6rem;
+    }
+
+    main section h3 {
+        font-size: 1.2rem;
+    }
+
+    main section p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 500px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+:root {
+    --cor-primaria: #4CAF50;
+    --branco-secundario: #f2f2f2;
+    --cor-texto: #333;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+}
+
 .container-tudo {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "header header header"
         "banner banner banner"
-        "aside main nav"
+        "aside main main"
         "footer footer footer";
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
 }
 
+header {
+    grid-area: header;
+    display: flex;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.logo-titulo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: end;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 5vw;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+    color: #5d5e5d;
+}
+
+.banner {
+    grid-area: banner;
+    background-image: url('https://wallpapers.com/images/hd/ultra-wide-nature-wg3fo21njjv2n9nd.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    font-size: 3vmax;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+}
+
+.banner button {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1.8vmax;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.banner button:hover {
+    background-color: #45a049;
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    background-color: #e0e0e0;
+    padding: 20px;
+    height: auto;
+}
+
+main {
+    grid-area: main;
+    color: var(--cor-texto);
+    padding: 20px 30px;
+    line-height: 1.6;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+    text-align: center;
+}
+
+.p-principal {
+    margin-bottom: 30px;
+}
+
+main section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: var(--branco-secundario);
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 5px;
+}
+
+main section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+main section p {
+    font-size: 1rem;
+    color: var(--cor-texto);
+}
+
+footer {
+    grid-area: footer;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
