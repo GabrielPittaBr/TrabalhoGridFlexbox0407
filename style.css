@@ -1,0 +1,49 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Define o layout principal com Flexbox */
+.conteudo {
+  display: flex;               /* ativa o Flexbox */
+  justify-content: space-between; /* espaço entre os elementos */
+  align-items: flex-start;     /* alinha topo dos elementos */
+  padding: 20px;
+  gap: 30px;                   /* espaçamento entre os filhos (main e aside) */
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Estiliza o aside */
+.aside-natureza {
+  flex: 1;                    /* ocupa uma parte do espaço */
+  max-width: 350px;           /* limita a largura do aside */
+  background-color: #e0f5e6;  /* verde claro de fundo */
+  border-left: 6px solid #4CAF50; /* borda decorativa */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do aside */
+.aside-natureza h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+/* Lista de curiosidades */
+.aside-natureza ul {
+  list-style: disc inside;  /* bolinhas dentro do container */
+  padding: 0;
+  margin: 0;
+}
+
+.aside-natureza li {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+
