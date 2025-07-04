@@ -201,10 +201,144 @@ main section p {
     color: var(--cor-texto);
 }
 
-footer {
+
+.footer {
     grid-area: footer;
-    background-color: #4CAF50;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #111;
     color: white;
+    padding: 40px 60px;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer-coluna {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-coluna h3 {
+    color: #66bb6a;
+    border-bottom: 2px solid #66bb6a;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.footer-coluna p,
+.footer-coluna ul {
+    color: white;
+    margin: 0;
+}
+
+.footer-coluna a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.footer-coluna a:hover {
+    text-decoration: underline;
+}
+
+.footer-coluna ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+}
+
+.formulario {
+    max-width: 600px;
+    width: 90%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
     text-align: center;
+    margin-bottom: 25px;
+    color: #2e7d32;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
     padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+.checkbox {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button2 {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button2:hover {
+    background-color: #388e3c;
+}
+
+.sobre-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #333;
+}
+
+.sobre-conteudo h2 {
+    margin-bottom: 15px;
+    color: #2e7d32;
+}
+
+.sobre-conteudo h3 {
+    margin-top: 30px;
+    color: #388e3c;
+}
+
+.sobre-conteudo p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.sobre-conteudo ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
